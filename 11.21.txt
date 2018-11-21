@@ -1,0 +1,69 @@
+购物车
+一：mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hello_mysql        |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use hello_mysql;
+Database changed
+mysql> create table shoppingcart(id int auto_increment primary key, enjoy varchar(30), zktx varchar(20), dream varchar(10));
+Query OK, 0 rows affected (0.04 sec)
+
+二：
+mysql> insert into shoppingcart(id,enjoy,zktx,dream)
+    -> value(1,"jy","jj","yy");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from shoppingcart;
++----+-------+------+-------+
+| id | enjoy | zktx | dream |
++----+-------+------+-------+
+|  1 | jy    | jj   | yy    |
++----+-------+------+-------+
+1 row in set (0.00 sec)
+mysql> insert into shoppingcart(id,enjoy,zktx,dream) values(2,"zxy","zz","xx"),(3,"lele","ll","ee");
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from shoppingcart;
++----+-------+------+-------+
+| id | enjoy | zktx | dream |
++----+-------+------+-------+
+|  1 | jy    | jj   | yy    |
+|  2 | zxy   | zz   | xx    |
+|  3 | lele  | ll   | ee    |
++----+-------+------+-------+
+3 rows in set (0.00 sec)
+三：
+mysql> update shoppingcart set dream="jj" where dream="yy";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from shoppingcart;
++----+-------+------+-------+
+| id | enjoy | zktx | dream |
++----+-------+------+-------+
+|  1 | jy    | jj   | jj    |
+|  2 | zxy   | zz   | xx    |
+|  3 | lele  | ll   | ee    |
++----+-------+------+-------+
+3 rows in set (0.00 sec)
+四：
+mysql> delete from shoppingcart where enjoy="lele";
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from shoppingcart;
++----+-------+------+-------+
+| id | enjoy | zktx | dream |
++----+-------+------+-------+
+|  1 | jy    | jj   | jj    |
+|  2 | zxy   | zz   | xx    |
++----+-------+------+-------+
+2 rows in set (0.00 sec)
