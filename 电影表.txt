@@ -1,0 +1,66 @@
+一、
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hello_mysql        |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use hello_mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> create table movie(id int auto_increment primary key, name varchar(30), year int, director varchar(20), grade int);
+Query OK, 0 rows affected (0.02 sec)
+mysql> insert into movie(id,name,year,director,grade) 
+    -> values(1,"duye","2018","RubenFleischer","9.3"),
+    -> (2,"tsddz","1976","XiaogangFeng","7.5");
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from movie;
++----+-------+------+----------------+-------+
+| id | name  | year | director       | grade |
++----+-------+------+----------------+-------+
+|  1 | duye  | 2018 | RubenFleischer |     9 |
+|  2 | tsddz | 1976 | XiaogangFeng   |     8 |
++----+-------+------+----------------+-------+
+2 rows in set (0.01 sec)
+mysql> select * from movie where name like "%duye%";
++----+------+------+----------------+-------+
+| id | name | year | director       | grade |
++----+------+------+----------------+-------+
+|  1 | duye | 2018 | RubenFleischer |     9 |
++----+------+------+----------------+-------+
+1 row in set (0.07 sec)
+二、
+mysql> select * from movie where director like "%XiaogangFeng%";
++----+-------+------+--------------+-------+
+| id | name  | year | director     | grade |
++----+-------+------+--------------+-------+
+|  2 | tsddz | 1976 | XiaogangFeng |     8 |
++----+-------+------+--------------+-------+
+1 row in set (0.00 sec)
+三、
+mysql> select * from movie where year=1976;
++----+-------+------+--------------+-------+
+| id | name  | year | director     | grade |
++----+-------+------+--------------+-------+
+|  2 | tsddz | 1976 | XiaogangFeng |     8 |
++----+-------+------+--------------+-------+
+1 row in set (0.03 sec)
+四、
+mysql> select max(grade) from movie;
++------------+
+| max(grade) |
++------------+
+|          9 |
++------------+
+1 row in set (0.12 sec)
+

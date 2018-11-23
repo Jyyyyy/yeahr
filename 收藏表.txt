@@ -1,0 +1,69 @@
+收藏表；
+一、
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| hello_mysql        |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.06 sec)
+
+mysql> use hello_mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> create table sc(id int auto_increment primary key,
+    -> shoucang varchar(30));
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> insert into sc(id,shoucang)
+    -> values(1,"kouhong"),
+    -> (2,"fendi"),
+    -> (3,"xuedixue");
+Query OK, 3 rows affected (0.05 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from sc;
++----+----------+
+| id | shoucang |
++----+----------+
+|  1 | kouhong  |
+|  2 | fendi    |
+|  3 | xuedixue |
++----+----------+
+3 rows in set (0.00 sec)
+
+mysql> desc sc;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra          |
++----------+-------------+------+-----+---------+----------------+
+| id       | int(11)     | NO   | PRI | NULL    | auto_increment |
+| shoucang | varchar(30) | YES  |     | NULL    |                |
++----------+-------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+二、
+mysql> delete from sc where shoucang="fendi";
+Query OK, 1 row affected (0.67 sec)
+
+mysql> select * from sc;
++----+----------+
+| id | shoucang |
++----+----------+
+|  1 | kouhong  |
+|  3 | xuedixue |
++----+----------+
+2 rows in set (0.00 sec)
+三、
+mysql> select * from sc where shoucang="kouhong";
++----+----------+
+| id | shoucang |
++----+----------+
+|  1 | kouhong  |
++----+----------+
+1 row in set (0.02 sec)
