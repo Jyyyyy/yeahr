@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jy</title>
+</head>
+<body>
+
+<b>&lt&ltSympathy for the peasants&gt&gt</b>
+<p>Hoeing millet in mid-day heat,</p>
+<p>Sweat dripping to the earth beneaht,</p>
+<p>Do you know the food on your plate,</p>
+<p>Each grain was hard-earned.</p>
+<br />
+
+
+</body>
+</html>
